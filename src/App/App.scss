@@ -1,0 +1,12 @@
+.AppBody {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 130px 110px 100px;
+  @media (max-width: 1299px) {
+    padding: 130px 40px 100px;
+  }
+  @media (max-width: 767px) {
+    padding: 100px 20px 70px;
+  }
+}

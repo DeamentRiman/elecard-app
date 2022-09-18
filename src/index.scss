@@ -1,0 +1,15 @@
+@import './styles/reset.scss';
+@import './styles/common.scss';
+
+// *{
+//     // outline: 1px solid red;
+// }
+
+#root {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}

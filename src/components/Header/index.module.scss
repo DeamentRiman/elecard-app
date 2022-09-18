@@ -1,0 +1,131 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    height: 130px;
+    padding: 0 110px;
+    align-items: center;
+    background-color: rgb(211, 211, 211);
+    @supports (backdrop-filter: blur(20px)) {
+        & {
+          background-color: rgba(77, 77, 77, 0.2);
+          backdrop-filter: blur(20px);
+        }
+    }
+    @media (max-width: 1299px) {
+        padding: 0 40px;
+    }
+    @media (max-width: 767px) {
+        height: 100px;
+        padding: 0 20px;
+    }
+    &Logo {
+        flex-shrink: 0;
+        width: 271px;
+        height: 70px;
+        margin-right: auto;
+        background: url('../Header/images/logo.svg') no-repeat;
+        @media (max-width: 1299px) {
+            width: 180px;
+            height: 50px;
+        }
+        @media (max-width: 767px){
+            width: 130px;
+            height: 30px;
+        }
+    }
+    &Nav{
+        display: flex;
+        align-items: baseline;
+        margin: 0 auto;
+        @media (max-width: 950px) {
+            display: none;
+            
+            &::before {
+                content: 'x';
+                position: absolute;
+                z-index: 10;
+                top: 15px;
+                right: 15px;
+                display: block;
+                width: 30px;
+                height: 30px;
+                border: 1px solid black;
+                border-radius: 1px;
+            }
+        }
+        &Item{
+            margin: 0 25px;
+            font-weight: 500;
+            font-size: 1.125rem;
+            line-height: 1.5;
+            color: black;
+            transition: opacity 0.2s;
+            text-decoration: none;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+        @media (max-width: 1299px) {
+            &Item{
+                margin: 0 20px;
+                font-size: 1rem;
+            }
+        }
+        // @media (max-width: 1170px) {
+        //     &Item{
+        //         margin: 0 10px;
+        //         font-size: 1rem;
+        //     }
+        // }
+    }
+    &User{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 180px;
+        @media (max-width: 1300px) {
+            width: 150px;
+        }
+        &Card{
+            position: relative;
+            padding: 0 30px;
+            font-size: 18px;
+            @media (max-width: 1299px) {
+                padding: 0 10px 0 30px;
+                font-size: 1rem;
+            }
+            &::before{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 2px;
+                width: 25px;
+                height: 23px;
+                background: url('../header/images/user.svg') no-repeat;
+                @media (max-width: 1299px) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            &:hover{
+                opacity: 0.7;
+            } 
+            }       
+            &Basket{
+                width: 30px;
+                height: 30px;
+                background: url('../header/images/basket.svg') no-repeat;
+                @media (max-width: 1299px) {
+                    width: 26px;
+                    height: 26px;
+                }
+                &:hover{
+                    opacity: 0.7;
+                } 
+            }
+    }
+}

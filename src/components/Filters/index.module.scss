@@ -1,0 +1,130 @@
+.mainFilter {
+    grid-column: 1/-1;
+    &Form{
+        display: flex;
+        justify-content: space-evenly;
+        @media (max-width: 1169px) {
+            flex-wrap: wrap;
+        }
+    }
+    &Category{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 250px;
+        margin-bottom: 10px;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    &Title {
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+    }
+    &Select {
+        position: relative;
+        width: 200px;
+        height: 25px;
+        outline: none;
+        border: 1px solid grey;
+        border-radius: 2px;
+        font-size: 0.75rem;
+        color: black;
+        &:active, &:hover, &:focus {
+            border: 1px solid grey;
+            border-radius: 2px;
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    &Item{
+        font-size: 0.75rem;
+        color: black;
+    }
+    &Input{
+        width: 200px;
+        height: 25px;
+        padding: 2px 5px;
+        outline: none;
+        border: 1px solid grey;
+        border-radius: 2px;
+        font-size: 0.75rem;
+        color: black;
+        &::placeholder {
+            padding: 2px;
+            font-size: 0.75rem;
+        color: darkgray;
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    input[type=range].mainFilterRange {
+        overflow: hidden;
+        box-sizing: content-box;
+        width: 50px;
+        height: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: transparent;
+    }
+    input[type='range'].mainFilterRange::-webkit-slider-runnable-track {
+        width: 50px;
+        height: 20px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 7px;
+        padding: 0;
+    }
+    input[type='range'].mainFilterRange::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 35px;
+        height:6px;
+        margin: 0;
+        border-radius: 3px;
+        background: white;
+    }
+    input[type='range'].mainFilterRange {
+        overflow: hidden;
+        box-sizing: content-box;
+        width: 50px;
+        height: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: transparent;
+      }
+    input[type='range'].mainFilterRange::-webkit-slider-runnable-track {
+        width: 50px;
+        height: 10px;
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 3px;
+        padding: 0;
+        margin: 0;
+    }
+    input[type='range'].mainFilterRange::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 24px;
+        height: 10px;
+        margin-top: -1px;
+        background: darkolivegreen;
+        position: relative;
+        box-shadow: 0 0 0.5px 0.5px darkolivegreen;
+    }
+    &Button {
+        width: 180px;
+        height: 30px;
+        background-color: white;
+        border: 1px solid grey;
+        border-radius: 2px;
+        transition: background-color 0.4s;
+        transition: color 0.1s;
+        &:hover {
+            background-color: darkolivegreen;
+            color: white;
+        }
+    }
+}

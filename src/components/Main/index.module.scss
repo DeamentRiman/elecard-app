@@ -1,0 +1,22 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-template-rows: minmax(35px, auto) repeat(auto-fill, 200px);
+    gap: 25px;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding: 20px 0;
+    overflow-x: hidden;
+    @media (max-width: 879px){
+        grid-template-columns: repeat(auto-fill, 280px);
+        grid-template-rows: minmax(35px, auto) repeat(auto-fill, 230px);
+    }
+    @media (max-width: 624px){
+        justify-content: space-around;
+    }
+    &WithOutCards{
+        grid-column: 1/-1;
+        text-align: center;
+    }
+
+}
