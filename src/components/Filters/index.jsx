@@ -1,49 +1,107 @@
-import React from "react";
+import React, { useState} from "react";
 import styles from '../Filters/index.module.scss';
 
 export const FilterBlock = () => {
+    const [categotyValue, setCategoryValue] = useState('allCategory');
+    const [dateValue, setDateValue] = useState('allDate');
+    const [nameValue, setNameValue] = useState();
+    const [fileSizeValue, setFileSizeValue] = useState('allFileSize');
+    const [viewValue, setViewValue] = useState('cards');
+    const [initialValue, setInitialValue] = useState();
+    const [formValue, setFormValue] = useState({categotyValue, dateValue,nameValue, fileSizeValue, viewValue, initialValue});
     return (
         <div className={styles.mainFilter}>
-            <form className={styles.mainFilterForm}>
+            <form className={styles.mainFilterForm} onChange={(e)=>(setFormValue(e.target.value))}>
                 <div className={styles.mainFilterCategory}>
-                    <label className={styles.mainFilterTitle} for='category'>Сортировака по категории</label>
-                    <select className={styles.mainFilterSelect} name='category' id='category'>
-                        <option value="noValue">-- Выберите категорию --</option>
-                        <option value='animals'>Животные</option>
-                        <option value='business'>Бизнес</option>
-                        <option value='food'>Еда</option>
-                        <option value='health'>Здоровье</option>
-                        <option value='places'>Места</option>
-                        <option value='science'>Наука</option>
-                        <option value='winter'>Зима</option>
-                    </select>
+                    <fieldset className={styles.mainFilterFieldset}>
+                        <legend className={styles.mainFilterLegend}>Сортировака по категории</legend>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='category' value='allCategory' onChange={(e)=>(setCategoryValue(e.target.value))} defaultChecked/>
+                            Все категории
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='category' value='animals' onChange={(e)=>(setCategoryValue(e.target.value))}/>
+                            Животные
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='category' value='business' onChange={(e)=>(setCategoryValue(e.target.value))}/>
+                            Бизнес
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='category'value='food' onChange={(e)=>(setCategoryValue(e.target.value))}/>
+                            Еда
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='category' value='health' onChange={(e)=>(setCategoryValue(e.target.value))}/>
+                            Здоровье
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='category' value='places' onChange={(e)=>(setCategoryValue(e.target.value))}/>
+                            Места
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='category' value='science' onChange={(e)=>(setCategoryValue(e.target.value))}/>
+                            Наука
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='category' value='winter' onChange={(e)=>(setCategoryValue(e.target.value))}/>
+                            Зима
+                        </label>
+                    </fieldset>
                 </div>
                 <div className={styles.mainFilterCategory}>
-                    <label className={styles.mainFilterTitle} for='date'>Сортировака по дате</label>
-                    <select className={styles.mainFilterSelect} name='date' id='date'>
-                        <option value="">-- Выберите тип сортировки --</option>
-                        <option value='toHight'>По возратанию</option>
-                        <option value='toLow'>По убыванию</option>
-                    </select>
+                    <fieldset className={styles.mainFilterFieldset}>
+                        <legend className={styles.mainFilterLegend}>Сортировака по дате</legend>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='date' value='allDate' onChange={(e)=>(setDateValue(e.target.value))} defaultChecked/>
+                            Без сортировки
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='date' value='toHight' onChange={(e)=>(setDateValue(e.target.value))}/>
+                            По возрастанию
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='date' value='toLow' onChange={(e)=>(setDateValue(e.target.value))}/>
+                            По убыванию
+                        </label>
+                    </fieldset>
                 </div>
                 <div className={styles.mainFilterCategory}>
-                    <label className={styles.mainFilterTitle} for='name'>Сортировака по названию</label>
-                    <input className={styles.mainFilterInput} type="text" name='name' placeholder='Введите название'/>
+                    <label className={styles.mainFilterTitle} htmlFor='name'>Сортировака по названию</label>
+                    <input className={styles.mainFilterInput} type="text" name='name' id='name' value='' placeholder='Введите название' onChange={(e)=>(setNameValue(e.target.value))}/>
                 </div>
                 <div className={styles.mainFilterCategory}>
-                    <label className={styles.mainFilterTitle} for='fileSize'>Сортировака по размеру файла</label>
-                    <select className={styles.mainFilterSelect} name='fileSize' id='fileSize'>
-                        <option value="">-- Выберите тип сортировки --</option>
-                        <option value='toHight'>По возратанию</option>
-                        <option value='toLow'>По убыванию</option>
-                    </select>
+                    <fieldset className={styles.mainFilterFieldset}>
+                        <legend className={styles.mainFilterLegend}>Сортировака по размеру файла</legend>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='fileSize' value='allFileSize' onChange={(e)=>(setFileSizeValue(e.target.value))} defaultChecked/>
+                            Без сортировки
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='fileSize' value='toHight' onChange={(e)=>(setFileSizeValue(e.target.value))}/>
+                            По возрастанию
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='fileSize' value='toLow' onChange={(e)=>(setFileSizeValue(e.target.value))}/>
+                            По убыванию
+                        </label>
+                    </fieldset>
                 </div>
                 <div className={styles.mainFilterCategory}>
-                    <label className={styles.mainFilterTitle} for='viewChanger'>Отобразить карточки списком</label>
-                    <input className={styles.mainFilterRange} type="range" name='viewChanger' id='viewChanger' min='0' max='1' value='1' step='1'/>
+                    <fieldset className={styles.mainFilterFieldset}>
+                        <legend className={styles.mainFilterLegend}>Отображение данных</legend>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='appearance' value='listing' onChange={(e)=>(setViewValue(e.target.value))}/>
+                            Список
+                        </label>
+                        <label className={styles.mainFilterTitle}>
+                            <input className={styles.mainFilterRadio} type="radio" name='appearance' value='cards' onChange={(e)=>(setViewValue(e.target.value))} defaultChecked/>
+                            Карточки
+                        </label>
+                    </fieldset>
                 </div>
                 <div className={styles.mainFilterCategory}>
-                    <button className={styles.mainFilterButton} type="button">Начальное состояние</button> 
+                    <button className={styles.mainFilterButton} type="button" onClick={(e)=>(setInitialValue(e.target.value))}>Начальное состояние</button> 
                 </div>
             </form>
         </div>
