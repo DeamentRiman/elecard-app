@@ -8,19 +8,19 @@
     background-color: #fff;
     box-shadow: 3px 3px 3px 0px grey;
     transition: box-shadow 0.4s;
-    &::before {
+    &Button {
         position: absolute;
-        content: "\2716";
         top: 3px;
         right: 3px;
         z-index: 10;
         display: block;
         width: 20px;
         height: 20px;
+        padding: 0;
         border-radius: 1px;
         background-color: lightgray;
         font-size: 0.8rem;
-        line-height: 1.3rem;
+        line-height: 1rem;
         text-align: center;
         transition: opacity 0.4s;
         opacity: 0.6;

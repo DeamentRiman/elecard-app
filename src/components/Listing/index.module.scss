@@ -1,0 +1,68 @@
+.listTree {
+    list-style: none;
+    &Parent {
+        position: relative;
+        padding-left: 30px;
+        z-index: 1;
+        &:before {
+            content: '+ ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    &Image {
+        width: 50px;
+        height: auto;
+    }
+    &BigImage {
+        position: absolute;
+        top: 10%;
+        left: calc(50% - 40px); 
+        display: block;
+        width: 150px;
+        height: auto;
+        z-index: 10;
+    }
+    &Modal {
+        font-size: 12px;
+    }
+    &Modal > .listTreeHeader {
+        width: 100%;
+        border-bottom: 1px solid gray;
+        font-size: 18px;
+        text-align: center;
+        padding: 5px;
+  }
+  &Modal > .listTreeContent {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  &Content .listTreeImage {
+    width: 100%;
+    height: auto;
+    }
+  &Modal > .listTreeActions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+  &Modal > .listTreeClose {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }
+}

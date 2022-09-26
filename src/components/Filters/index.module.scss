@@ -16,30 +16,13 @@
             width: 100%;
         }
     }
-    &Title, &Legend {
+    &Fieldset{
+        display: flex;
+        flex-direction: column;
+    }
+    &Title {
         margin-bottom: 5px;
         font-size: 0.8rem;
-    }
-    &Select {
-        position: relative;
-        width: 200px;
-        height: 25px;
-        outline: none;
-        border: 1px solid grey;
-        border-radius: 2px;
-        font-size: 0.75rem;
-        color: black;
-        &:active, &:hover, &:focus {
-            border: 1px solid grey;
-            border-radius: 2px;
-        }
-        @media (max-width: 768px) {
-            width: 100%;
-        }
-    }
-    &Item{
-        font-size: 0.75rem;
-        color: black;
     }
     &Input{
         width: 200px;
@@ -71,9 +54,5 @@
             background-color: darkolivegreen;
             color: white;
         }
-    }
-    &Fieldset{
-        display: flex;
-        flex-direction: column;
     }
 }

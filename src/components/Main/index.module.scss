@@ -1,4 +1,5 @@
 .main {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fill, 250px);
     grid-template-rows: minmax(35px, auto) repeat(auto-fill, auto);
@@ -17,6 +18,64 @@
     &WithOutCards{
         grid-column: 1/-1;
         text-align: center;
+    }
+    &Filter {
+        grid-column: 1/-1;
+        &Form{
+            display: flex;
+            justify-content: space-evenly;
+            @media (max-width: 1169px) {
+                flex-wrap: wrap;
+            }
+        }
+        &Category{
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            margin-bottom: 10px;
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        &Fieldset{
+            display: flex;
+            flex-direction: column;
+        }
+        &Title, &Legend {
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+        }
+        &Input{
+            width: 200px;
+            height: 25px;
+            padding: 2px 5px;
+            outline: none;
+            border: 1px solid grey;
+            border-radius: 2px;
+            font-size: 0.75rem;
+            color: black;
+            &::placeholder {
+                padding: 2px;
+                font-size: 0.75rem;
+            color: darkgray;
+            }
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        &Button {
+            width: 180px;
+            height: 30px;
+            background-color: white;
+            border: 1px solid grey;
+            border-radius: 2px;
+            transition: background-color 0.4s;
+            transition: color 0.1s;
+            &:hover {
+                background-color: darkolivegreen;
+                color: white;
+            }
+        }
     }
 
 }
