@@ -1,15 +1,10 @@
 import React from "react";
 import styles from '../Listing/index.module.scss';
 import Popup from 'reactjs-popup';
-// import Popup from "../Popup";
-import 'reactjs-popup/dist/index.css';
-import Moment from 'react-moment';
-
-// import styles from '../Popup/index.module.scss';
 
 export const Listing = ({index, image, filesize, timestamp, category}) => {
     let adress = 'http://contest.elecard.ru/frontend_data/' + image;
-    Moment.globalFormat = 'dd.mm.yyyy';
+    let dt=new Date(timestamp).toLocaleString("ru-RU");
 
     return (
         <div className={styles.list} index = {index} category={category} timestamp={timestamp} filesize={filesize}>
@@ -33,7 +28,7 @@ export const Listing = ({index, image, filesize, timestamp, category}) => {
                     </Popup>
                     </li>
                     <li>filesize: {filesize}</li>
-                    <li>timestamp: <Moment unix>{timestamp}</Moment></li>
+                    <li>timestamp: {dt}</li>
                     <li>category: {category}</li>
                 </ul>
             </ul>

@@ -42,7 +42,6 @@
     ]
   },
   "devDependencies": {
-    "react-moment": "^1.1.2",
     "sass": "^1.54.9"
   }
 }
