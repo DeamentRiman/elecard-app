@@ -4,15 +4,27 @@ import axios from 'axios';
 
 export const useCardsStore = create((set, get) => ({
     cards: [],
-    cardsInitial: [],
-    formStateOnes: [],
     executeCards: async (url) => {
         const response = await axios.get(url);
         set({ 
             cards: await response.data,
-            cardsInitial: await response.data,
         })
     },
+    cardCloser: (index) => {
+        const { cards } = get();
+        set({
+            cards: cards.filter((card, i) => {
+                return index !== i;
+        })
+        });
+    },
+    setInitialState: (cardsList)=> {
+        const { cards } = get();
+        set ({
+            cards: cardsList
+        });
+        console.log(cards);
+    }
     }))
 
 // export const CardsList = () => {
